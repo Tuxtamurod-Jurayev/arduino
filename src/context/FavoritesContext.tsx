@@ -21,18 +21,19 @@ const FavoritesContext = createContext<FavoritesContextType | undefined>(undefin
 
 export function FavoritesProvider({ children }: { children: React.ReactNode }) {
   const [favorites, setFavorites] = useState<FavoriteItem[]>([]);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     try {
       const stored = localStorage.getItem('arduinouz-favorites');
       if (stored) {
-        setFavorites(JSON.parse(stored));
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setTimeout(() => setFavorites(parsed), 0);
+        }
       }
     } catch {
       // ignore
     }
-    setMounted(true);
   }, []);
 
   const saveFavorites = (items: FavoriteItem[]) => {

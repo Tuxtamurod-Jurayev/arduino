@@ -4,15 +4,9 @@ import { boardsData } from '@/data/boards';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { PinoutVisualizer } from '@/components/boards/PinoutVisualizer';
 import {
-  Cpu,
-  Layers,
   HardDrive,
-  Clock,
-  Zap,
   CheckCircle2,
   Download,
-  Terminal,
-  ShieldAlert,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -46,25 +40,37 @@ export default async function BoardDetailPage({ params }: PageProps) {
 
       {/* Board Header */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <div className="flex items-center space-x-2 mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
-                Chip: {board.chip}
-              </span>
-              <span className="text-xs font-mono text-zinc-400">
-                Takt chastotasi: {board.clockSpeed}
-              </span>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+            {board.imageUrl && (
+              <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 flex-shrink-0 shadow-md">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={board.imageUrl}
+                  alt={board.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <div>
+              <div className="flex items-center space-x-2 mb-2">
+                <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
+                  Chip: {board.chip}
+                </span>
+                <span className="text-xs font-mono text-zinc-400">
+                  Takt chastotasi: {board.clockSpeed}
+                </span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
+                {board.title}
+              </h1>
+              <p className="mt-2 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
+                {board.description}
+              </p>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-              {board.title}
-            </h1>
-            <p className="mt-2 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
-              {board.description}
-            </p>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 flex-shrink-0">
             <Link
               href="/boards"
               className="px-4 py-2 text-xs font-medium rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 transition-colors"

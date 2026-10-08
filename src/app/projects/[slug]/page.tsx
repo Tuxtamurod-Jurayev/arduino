@@ -7,7 +7,6 @@ import { CodeBlock } from '@/components/common/CodeBlock';
 import { ProjectBomChecklist } from '@/components/projects/ProjectBomChecklist';
 import {
   Clock,
-  Gauge,
   Play,
   AlertTriangle,
   Lightbulb,

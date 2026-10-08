@@ -4,12 +4,8 @@ import { componentsData } from '@/data/components';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { CodeBlock } from '@/components/common/CodeBlock';
 import {
-  Layers,
   Zap,
-  HelpCircle,
   AlertTriangle,
-  Bookmark,
-  Share2,
   Cpu,
   Info,
 } from 'lucide-react';
@@ -64,25 +60,37 @@ export default async function ComponentDetailPage({ params }: PageProps) {
 
       {/* Top Header Card */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <div className="flex items-center space-x-2 mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
-                {item.category}
-              </span>
-              <span className="text-xs font-mono text-zinc-400">
-                Ishchi kuchlanish: {item.voltage}
-              </span>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+            {item.imageUrl && (
+              <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 flex-shrink-0 shadow-md">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.imageUrl}
+                  alt={item.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <div>
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
+                  {item.category}
+                </span>
+                <span className="text-xs font-mono text-zinc-400">
+                  Ishchi kuchlanish: {item.voltage}
+                </span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
+                {item.name}
+              </h1>
+              <p className="mt-2 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
+                {item.shortDesc}
+              </p>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-              {item.name}
-            </h1>
-            <p className="mt-2 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
-              {item.shortDesc}
-            </p>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 flex-shrink-0">
             <Link
               href="/components"
               className="px-4 py-2 text-xs font-medium rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 transition-colors"
@@ -127,7 +135,7 @@ export default async function ComponentDetailPage({ params }: PageProps) {
 
             {/* Circuit Table */}
             <div className="overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
-              <table className="w-full text-xs text-left">
+              <table className="w-full text-xs text-left min-w-[320px]">
                 <thead className="bg-zinc-100 dark:bg-zinc-800/60 text-zinc-700 dark:text-zinc-300 uppercase font-mono">
                   <tr>
                     <th className="py-2.5 px-4">Datchik Oyoqchasi</th>

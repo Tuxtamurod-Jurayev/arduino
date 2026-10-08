@@ -12,7 +12,9 @@ export default function ComponentsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const { isFavorite, toggleFavorite } = useFavorites();
 
-  const categories = ['Barchasi', 'Sensorlar', 'Displeylar', 'Motorlar', 'Modullar'];
+  const categories = useMemo(() => {
+    return ['Barchasi', ...Array.from(new Set(componentsData.map((c) => c.category)))];
+  }, []);
 
   const filteredComponents = useMemo(() => {
     return componentsData.filter((item) => {
@@ -127,6 +129,22 @@ export default function ComponentsPage() {
                       </button>
                     </div>
                   </div>
+
+                  {/* Component Image Preview */}
+                  {item.imageUrl && (
+                    <Link
+                      href={`/components/${item.slug}`}
+                      className="block mb-3.5 overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 aspect-video relative group/img"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={item.imageUrl}
+                        alt={item.name}
+                        className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </Link>
+                  )}
 
                   {/* Component Name */}
                   <Link href={`/components/${item.slug}`}>

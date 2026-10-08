@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { BoardItem } from '@/types';
-import { Zap, Activity, Info, ShieldCheck } from 'lucide-react';
+import { Zap, Activity, Info } from 'lucide-react';
 
 interface PinoutVisualizerProps {
   board: BoardItem;

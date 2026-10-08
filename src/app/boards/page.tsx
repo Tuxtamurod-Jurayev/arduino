@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Cpu, ArrowRight, Zap, CheckCircle2, Layers } from 'lucide-react';
+import { Cpu, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { boardsData } from '@/data/boards';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 
@@ -53,6 +53,22 @@ export default function BoardsPage() {
               <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3">
                 {board.description}
               </p>
+
+              {/* Board Photo Banner */}
+              {board.imageUrl && (
+                <Link
+                  href={`/boards/${board.slug}`}
+                  className="block my-3.5 overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 aspect-video relative group/img shadow-xs"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={board.imageUrl}
+                    alt={board.title}
+                    className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </Link>
+              )}
 
               {/* Key Specs Matrix */}
               <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">

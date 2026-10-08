@@ -6,6 +6,8 @@ export const boardsData: BoardItem[] = [
     slug: 'arduino-uno-r3',
     title: 'Arduino Uno R3',
     chip: 'ATmega328P (8-bit AVR)',
+    imageUrl: 'https://yarat.uz/wp-content/uploads/2023/05/UNOR3-e1705082394439.jpg',
+    pinoutImageUrl: 'https://yarat.uz/wp-content/uploads/2023/05/uno-scheme.png',
     operatingVoltage: '5V',
     inputVoltage: '7V - 12V (DC Jack yoki Vin)',
     digitalPins: 14,
@@ -16,13 +18,13 @@ export const boardsData: BoardItem[] = [
     eeprom: '1 KB',
     clockSpeed: '16 MHz kvars kristalli',
     description:
-      'Arduino Uno R3 — dunyodagi eng mashhur va o\'rganish uchun eng qulay mikrokontroller platasi. Unda yangi boshlovchi uchun zarur bo\'lgan barcha narsalar: USB port, quvvat uyasi, qayta yuklash (Reset) tugmasi va qulay pin uyalari mavjud.',
+      'Arduino Uno R3 — dunyodagi eng mashhur va o\'rganish uchun eng qulay mikrokontroller platasi (Atmega mikrokontrolleri asosidagi modul-konstruktor, tajriba olib borish platasi, "плата отладки"). Unda yangi boshlovchi uchun zarur bo\'lgan barcha narsalar: USB port, quvvat uyasi, qayta yuklash (Reset) tugmasi va qulay pin uyalari mavjud.',
     features: [
       'ATmega328P chipi (DIP korpusda — shikastlansa osongina almashtiriladi)',
       'ATmega16U2 USB-to-Serial konverter chipi',
       'Avtomatik quvvat manbaini tanlash (USB yoki DC adapter)',
-      'ICSP dasturlash porti',
-      'Plataga o\'rnatilgan 13-pindagi sinov LEDi',
+      'ICSP dasturlash porti va 13-pindagi sinov svetodiodi',
+      'SDA va SCL (I2C) hamda AREF pinlari',
     ],
     pinoutSummary: [
       { pin: 'D0 (RX)', functions: ['UART qabul qilish', 'Digital I/O'], type: 'communication' },
@@ -39,7 +41,7 @@ export const boardsData: BoardItem[] = [
       { pin: 'D11 (~)', functions: ['PWM chiqish', 'SPI (MOSI)', 'Digital I/O'], type: 'pwm' },
       { pin: 'D12', functions: ['SPI (MISO)', 'Digital I/O'], type: 'digital' },
       { pin: 'D13', functions: ['SPI (SCK)', 'O\'rnatilgan LED', 'Digital I/O'], type: 'special' },
-      { pin: 'A0', functions: ['Analog kirish (10-bit ADC)', 'Digital I/O'], type: 'analog' },
+      { pin: 'A0', functions: ['Analog kirish (10-bit ADC 0-1023)', 'Digital I/O'], type: 'analog' },
       { pin: 'A1', functions: ['Analog kirish', 'Digital I/O'], type: 'analog' },
       { pin: 'A2', functions: ['Analog kirish', 'Digital I/O'], type: 'analog' },
       { pin: 'A3', functions: ['Analog kirish', 'Digital I/O'], type: 'analog' },
@@ -54,9 +56,9 @@ export const boardsData: BoardItem[] = [
     driverInfo: {
       chipName: 'CH340G / ATmega16U2',
       description:
-        'Asl (Original) Uno versiyalari drayver talab qilmaydi (avtomatik taniydi). Lekin O\'zbekiston bozoridagi ko\'plab Uno klonlari arzonroq CH340 chipiga ega.',
+        'Asl (Original) Uno versiyalari drayver talab qilmaydi. O\'zbekiston bozoridagi ko\'plab Uno klonlari arzonroq CH340 chipiga ega bo\'lib, bitta marta drayver o\'rnatishni talab qiladi.',
       installSteps: [
-        'Kompyuteringizga CH341SER drayver arxivini yuklab oling.',
+        'CH341SER.EXE drayverini yuklab oling.',
         'SETUP.exe faylini ochib, "INSTALL" tugmasini bosing.',
         'Arduino Uno platasini USB orqali ulang.',
         'Arduino IDE menyusidan: Tools -> Board -> Arduino Uno ni tanlang.',
@@ -67,8 +69,10 @@ export const boardsData: BoardItem[] = [
   {
     id: 'nano',
     slug: 'arduino-nano',
-    title: 'Arduino Nano',
+    title: 'Arduino Nano V3.0',
     chip: 'ATmega328P (8-bit AVR)',
+    imageUrl: 'https://yarat.uz/wp-content/uploads/2023/05/nano-1024x814.jpg',
+    pinoutImageUrl: 'https://yarat.uz/wp-content/uploads/2023/05/arduino_nano_shema.jpg',
     operatingVoltage: '5V',
     inputVoltage: '7V - 12V (Vin)',
     digitalPins: 14,
@@ -79,7 +83,7 @@ export const boardsData: BoardItem[] = [
     eeprom: '1 KB',
     clockSpeed: '16 MHz',
     description:
-      'Arduino Nano — bu Uno platasining juda ixcham, to\'g\'ridan-to\'g\'ri sinov maketiga (Breadboard) qadaladigan varianti. U Uno bilan bir xil quvvat va imkoniyatlarga ega, hatto qo\'shimcha 2 ta analog pini (A6 va A7) ham bor.',
+      'Arduino Nano — bu Uno platasining juda ixcham, to\'g\'ridan-to\'g\'ri sinov maketiga (Breadboard) qadaladigan varianti. U Uno bilan bir xil quvvat va imkoniyatlarga ega bo\'lib, hatto qo\'shimcha 2 ta analog pini (A6 va A7) ham bor.',
     features: [
       'Mini-B USB yoki Type-C portli ixcham dizayn',
       'Breadboard uchun mos 2 qatorli 30 oyoqli pinlar',
@@ -88,7 +92,7 @@ export const boardsData: BoardItem[] = [
     ],
     pinoutSummary: [
       { pin: 'D0 - D13', functions: ['Raqamli I/O, PWM (~), SPI'], type: 'digital' },
-      { pin: 'A0 - A5', functions: ['10-bit ADC Analog kirishlar, I2C'], type: 'analog' },
+      { pin: 'A0 - A5', functions: ['10-bit ADC Analog kirishlar, I2C (A4-SDA, A5-SCL)'], type: 'analog' },
       { pin: 'A6, A7', functions: ['Faqat Analog kirish (Raqamli bo\'lib ishlamaydi)'], type: 'analog' },
       { pin: 'VIN / 5V / 3V3 / GND', functions: ['Quvvat pinlari'], type: 'power' },
     ],
@@ -106,7 +110,8 @@ export const boardsData: BoardItem[] = [
     id: 'mega',
     slug: 'arduino-mega-2560',
     title: 'Arduino Mega 2560 R3',
-    chip: 'ATmega2560',
+    chip: 'ATmega2560 (16 MHz)',
+    imageUrl: 'https://yarat.uz/wp-content/uploads/2023/05/ARDUINO_MEGA.webp',
     operatingVoltage: '5V',
     inputVoltage: '7V - 12V',
     digitalPins: 54,
@@ -117,17 +122,18 @@ export const boardsData: BoardItem[] = [
     eeprom: '4 KB',
     clockSpeed: '16 MHz',
     description:
-      'Arduino Mega 2560 — ko\'p pin va katta xotira talab qiluvchi murakkab loyihalar (3D printerlar, CNC dastgohlar, murakkab robotlar) uchun maxsus ishlab chiqilgan gigant plata.',
+      'Arduino Mega 2560 — ko\'p pin va katta xotira talab qiluvchi murakkab loyihalar (3D printerlar, CNC dastgohlar, murakkab robotlar) uchun maxsus ishlab chiqilgan gigant plata. Unda 54 ta raqamli va 16 ta analog pin mavjud.',
     features: [
       '54 ta raqamli kirish/chiqish pini (shundan 15 tasi PWM)',
-      '16 ta analog kirish pini',
-      '4 ta mustaqil apparatli Serial (UART) porti',
-      '256 KB ulkan dastur xotirasi',
+      '16 ta analog kirish pini (10-bit ADC)',
+      '4 ta mustaqil apparatli Serial (UART) porti (Serial, Serial1, Serial2, Serial3)',
+      '256 KB ulkan dastur xotirasi va 8 KB SRAM',
     ],
     pinoutSummary: [
       { pin: 'D0 - D13, D22 - D53', functions: ['54 ta raqamli pinlar'], type: 'digital' },
-      { pin: 'A0 - A15', functions: ['16 ta analog pinlar'], type: 'analog' },
-      { pin: 'Serial1, 2, 3', functions: ['Qo\'shimcha apparatli UART aloqalari'], type: 'communication' },
+      { pin: 'A0 - A15', functions: ['16 ta analog kirish pinlari'], type: 'analog' },
+      { pin: 'Serial1 (18, 19), Serial2 (16, 17), Serial3 (14, 15)', functions: ['Qo\'shimcha apparatli UART portlari'], type: 'communication' },
+      { pin: 'SDA (20), SCL (21)', functions: ['I2C apparatli shina'], type: 'communication' },
     ],
     driverInfo: {
       chipName: 'ATmega16U2 / CH340G',
@@ -135,6 +141,78 @@ export const boardsData: BoardItem[] = [
       installSteps: [
         'Tools -> Board -> Arduino Mega or Mega 2560 ni tanlang.',
         'Tools -> Processor -> ATmega2560 ni tanlang.',
+        'Tools -> Port orqali plataning COM portini belgilang.',
+      ],
+    },
+  },
+  {
+    id: 'leonardo',
+    slug: 'arduino-leonardo',
+    title: 'Arduino Leonardo',
+    chip: 'ATmega32U4',
+    imageUrl: 'https://yarat.uz/wp-content/uploads/2023/05/leonardo.jpg',
+    operatingVoltage: '5V',
+    inputVoltage: '7V - 12V',
+    digitalPins: 20,
+    pwmPins: 7,
+    analogPins: 12,
+    flashMemory: '32 KB (4 KB bootloader)',
+    sram: '2.5 KB',
+    eeprom: '1 KB',
+    clockSpeed: '16 MHz',
+    description:
+      'Arduino Leonardo — ATmega32U4 chipi asosidagi plata. Uning eng muhim qobiliyati: USB aloqasi bevosita mikrokontroller ichida joylashgan bo\'lib, kompyuterga ulanganda klaviatura yoki sichqoncha (HID qurilma) sifatida taniydi.',
+    features: [
+      'Kompyuterga sichqoncha va klaviatura (Keyboard/Mouse HID) signallarini yubora oladi',
+      'Alohida USB konverter chipiga muhtoj emas',
+      '20 ta raqamli pin (shundan 7 tasi PWM, 12 tasi analog kirish bo\'la oladi)',
+    ],
+    pinoutSummary: [
+      { pin: 'D0 - D13', functions: ['Raqamli I/O, PWM (~), SPI'], type: 'digital' },
+      { pin: 'A0 - A5, A6 - A11', functions: ['Jami 12 ta analog kirish pinlari'], type: 'analog' },
+    ],
+    driverInfo: {
+      chipName: 'ATmega32U4 ichki USB',
+      description: 'Drayver o\'rnatish talab etilmaydi.',
+      installSteps: [
+        'Tools -> Board -> Arduino Leonardo ni tanlang.',
+      ],
+    },
+  },
+  {
+    id: 'esp8266',
+    slug: 'esp8266-nodemcu',
+    title: 'ESP8266 NodeMCU V3 (Wi-Fi)',
+    chip: 'ESP8266 (Tensilica 32-bit L106)',
+    imageUrl: 'https://yarat.uz/wp-content/uploads/2023/05/esp8266.jpg',
+    operatingVoltage: '3.3V',
+    inputVoltage: '5V (MicroUSB)',
+    digitalPins: 11,
+    pwmPins: 10,
+    analogPins: 1,
+    flashMemory: '4 MB',
+    sram: '80 KB',
+    eeprom: 'Emulyatsiya qilinadi',
+    clockSpeed: '80 MHz / 160 MHz',
+    description:
+      'ESP8266 NodeMCU — o\'rnatilgan Wi-Fi moduliga ega bo\'lgan, internet orqali qurilmalarni boshqarishga (Smart Home, IoT) mo\'ljallangan juda mashhur va arzon mikrokontroller.',
+    features: [
+      'Ichki 802.11 b/g/n Wi-Fi moduli',
+      'Arduino IDE da to\'liq dasturlash imkoniyati',
+      'Web-server yaratish va Telegram bot orqali relelarni yoqish uchun ideal',
+    ],
+    pinoutSummary: [
+      { pin: 'D0 - D8', functions: ['GPIO raqamli pinlar'], type: 'digital' },
+      { pin: 'A0', functions: ['Analog kirish (0 - 1.0V oraliq, max 3.3V divider orqali)'], type: 'analog' },
+      { pin: '3V3, GND, VIN', functions: ['Quvvat pinlari'], type: 'power' },
+    ],
+    driverInfo: {
+      chipName: 'CH340G / CP2102',
+      description: 'Arduino IDE ga ESP8266 kutubxonasini qo\'shish.',
+      installSteps: [
+        'Preferences -> Additional Boards Manager URLs ga: http://arduino.esp8266.com/stable/package_esp8266com_index.json ni kiriting.',
+        'Boards Manager da "esp8266" ni o\'rnating.',
+        'Tools -> Board menyusidan "NodeMCU 1.0 (ESP-12E Module)" ni tanlang.',
       ],
     },
   },
@@ -143,6 +221,7 @@ export const boardsData: BoardItem[] = [
     slug: 'esp32-devkit-v1',
     title: 'ESP32 DevKit V1 (Wi-Fi + Bluetooth)',
     chip: 'ESP-WROOM-32 (Xtensa Dual-core 32-bit LX6)',
+    imageUrl: 'https://yarat.uz/wp-content/uploads/2023/05/hardware.jpg',
     operatingVoltage: '3.3V',
     inputVoltage: '5V (MicroUSB yoki Vin)',
     digitalPins: 30,
@@ -153,7 +232,7 @@ export const boardsData: BoardItem[] = [
     eeprom: 'Emulyatsiya qilinadi',
     clockSpeed: '240 MHz (Uno dan 15 baravar tez)',
     description:
-      'ESP32 — IoT (Internet of Things — Buyumlar interneti) olamining shohi. Unda ikki yadroli kuchli protsessor, o\'rnatilgan Wi-Fi va Bluetooth (BLE), sig\'imli sensor pinlar (Touch pins) va ulkan xotira mavjud.',
+      'ESP32 — IoT (Internet of Things — Buyumlar interneti) olamining shohi. Unda ikki yadroli kuchli protsessor, o\'rnatilgan Wi-Fi va Bluetooth (Classic va BLE), sig\'imli sensor pinlar (Touch pins) va ulkan xotira mavjud.',
     features: [
       'O\'rnatilgan 802.11 b/g/n Wi-Fi va Bluetooth v4.2 BR/EDR & BLE',
       '240 MHz gacha ishlovchi 2 ta mustaqil yadro',

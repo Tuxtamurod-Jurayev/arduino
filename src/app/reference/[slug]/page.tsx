@@ -9,10 +9,7 @@ import {
   ListTree,
   AlertCircle,
   CheckCircle,
-  HelpCircle,
-  ArrowRight,
 } from 'lucide-react';
-import Link from 'next/link';
 
 export function generateStaticParams() {
   return referenceData.map((r) => ({

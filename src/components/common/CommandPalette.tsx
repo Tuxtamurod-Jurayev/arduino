@@ -10,11 +10,13 @@ import {
   FolderGit2,
   Layers,
   ArrowRight,
+  FileText,
 } from 'lucide-react';
 import { componentsData } from '@/data/components';
 import { boardsData } from '@/data/boards';
 import { referenceData } from '@/data/reference';
 import { projectsData } from '@/data/projects';
+import { docsData } from '@/data/docs';
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -22,23 +24,18 @@ interface CommandPaletteProps {
 }
 
 export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
+  if (!isOpen) return null;
+  return <CommandPaletteModal onClose={onClose} />;
+}
+
+function CommandPaletteModal({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
   const router = useRouter();
 
-  // Reset query when opening
-  useEffect(() => {
-    if (isOpen) {
-      setQuery('');
-      setSelectedIndex(0);
-    }
-  }, [isOpen]);
-
-  // Global keydown listener for Esc and navigation
+  // Global keydown listener for Esc
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isOpen) return;
-
       if (e.key === 'Escape') {
         e.preventDefault();
         onClose();
@@ -47,7 +44,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [onClose]);
 
   // Filtered search results
   const results = useMemo(() => {
@@ -171,6 +168,23 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       }
     });
 
+    // Search docs
+    docsData.forEach((doc) => {
+      if (
+        doc.title.toLowerCase().includes(q) ||
+        doc.description.toLowerCase().includes(q)
+      ) {
+        items.push({
+          id: doc.id,
+          title: doc.title,
+          category: 'Hujjatlar',
+          type: 'doc',
+          href: `/docs/${doc.slug}`,
+          desc: doc.description,
+        });
+      }
+    });
+
     return items.slice(0, 8); // limit top results
   }, [query]);
 
@@ -188,8 +202,6 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       onClose();
     }
   };
-
-  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4">
@@ -261,13 +273,16 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                           ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400'
                           : item.type === 'board'
                           ? 'bg-teal-500/10 text-teal-600 dark:text-teal-400'
-                          : 'bg-amber-500/10 text-amber-600 dark:text-amber-400'
+                          : item.type === 'project'
+                          ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400'
+                          : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
                       }`}
                     >
                       {item.type === 'component' && <Layers className="w-4 h-4" />}
                       {item.type === 'reference' && <BookOpen className="w-4 h-4" />}
                       {item.type === 'board' && <Cpu className="w-4 h-4" />}
                       {item.type === 'project' && <FolderGit2 className="w-4 h-4" />}
+                      {item.type === 'doc' && <FileText className="w-4 h-4" />}
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center space-x-2">

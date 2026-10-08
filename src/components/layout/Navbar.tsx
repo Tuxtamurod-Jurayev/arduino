@@ -14,6 +14,7 @@ import {
   Layers,
   BookOpen,
   FolderGit2,
+  FileText,
 } from 'lucide-react';
 import { GithubIcon } from '@/components/common/Icons';
 import { useTheme } from '@/context/ThemeContext';
@@ -44,6 +45,7 @@ export function Navbar() {
     { href: '/boards', label: 'Platalar', icon: Cpu },
     { href: '/reference', label: 'Qo\'llanma', icon: BookOpen },
     { href: '/projects', label: 'Loyihalar', icon: FolderGit2 },
+    { href: '/docs', label: 'Hujjatlar', icon: FileText },
   ];
 
   return (
@@ -59,9 +61,6 @@ export function Navbar() {
               <div className="flex items-center space-x-1.5">
                 <span className="font-extrabold text-lg tracking-tight text-zinc-900 dark:text-white">
                   Arduino<span className="text-teal-600 dark:text-teal-400">Uz</span>
-                </span>
-                <span className="px-1.5 py-0.5 text-[10px] font-mono font-medium rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700">
-                  v1.0
                 </span>
               </div>
             </Link>

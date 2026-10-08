@@ -17,21 +17,21 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Check initial preference from localStorage or prefers-color-scheme
     const savedTheme = localStorage.getItem('arduinouz-theme') as Theme | null;
     if (savedTheme) {
-      setThemeState(savedTheme);
+      if (savedTheme !== theme) {
+        setTimeout(() => setThemeState(savedTheme), 0);
+      }
       if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
       }
     } else {
-      // Default to dark mode for developer aesthetic
       document.documentElement.classList.add('dark');
-      setThemeState('dark');
     }
-    setMounted(true);
+    setTimeout(() => setMounted(true), 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setTheme = (newTheme: Theme) => {

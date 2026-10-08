@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { FavoritesProvider } from '@/context/FavoritesContext';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { IntroSplash } from '@/components/common/IntroSplash';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -46,6 +47,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors">
         <ThemeProvider>
+          <IntroSplash />
           <FavoritesProvider>
             <Suspense fallback={<div className="h-16 w-full border-b border-zinc-200 dark:border-zinc-800" />}>
               <Navbar />

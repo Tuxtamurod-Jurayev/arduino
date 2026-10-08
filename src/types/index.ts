@@ -9,7 +9,7 @@ export type ComponentCategory =
 export interface PinoutItem {
   pin: string;
   name: string;
-  type: 'VCC' | 'GND' | 'Digital' | 'Analog' | 'I2C' | 'SPI' | 'UART' | 'PWM' | 'Quvvat';
+  type: 'VCC' | 'GND' | 'Digital' | 'Analog' | 'I2C' | 'SPI' | 'UART' | 'PWM' | 'Quvvat' | 'Special';
   description: string;
 }
 
@@ -21,6 +21,7 @@ export interface ComponentItem {
   category: ComponentCategory;
   voltage: string;
   current: string;
+  imageUrl?: string;
   specs: {
     label: string;
     value: string;
@@ -51,6 +52,8 @@ export interface BoardItem {
   slug: string;
   title: string;
   chip: string;
+  imageUrl?: string;
+  pinoutImageUrl?: string;
   operatingVoltage: string;
   inputVoltage: string;
   digitalPins: number;
@@ -74,14 +77,27 @@ export interface BoardItem {
   };
 }
 
+export type ReferencePillar = 'operators' | 'data' | 'functions';
+
 export type ReferenceCategory =
   | 'Asosiy tuzilma'
   | 'Boshqaruv operatorlari'
+  | 'Taqqoslash operatorlari'
+  | 'Mantiqiy operatorlar'
+  | 'Arifmetik operatorlar'
+  | 'Bitli operatorlar'
+  | 'Konstantalar'
   | 'Ma\'lumotlar turlari'
+  | 'Tip o\'zgartirish'
+  | 'O\'zgaruvchilar va modifikatorlar'
   | 'Raqamli I/O'
   | 'Analog I/O'
+  | 'Kengaytirilgan I/O'
   | 'Vaqt (Time)'
-  | 'Matematika'
+  | 'Matematika va Trigonometriya'
+  | 'Tasodifiy sonlar'
+  | 'Bitlar bilan ishlash'
+  | 'Tashqi uzilishlar (Interrupts)'
   | 'Serial aloqa';
 
 export interface ReferenceParam {
@@ -94,6 +110,8 @@ export interface ReferenceItem {
   id: string;
   slug: string;
   name: string;
+  pillar: ReferencePillar;
+  pillarLabel: 'Операторы' | 'Данные' | 'Функции';
   category: ReferenceCategory;
   summary: string;
   syntax: string;
@@ -132,11 +150,25 @@ export interface ProjectItem {
   estimatedTime: string;
   category: string;
   materials: ProjectMaterial[];
-  wokwiId?: string; // Wokwi project ID if available
-  wokwiUrl?: string; // Direct embed URL
+  wokwiId?: string;
+  wokwiUrl?: string;
   steps: ProjectStep[];
   troubleshooting: {
     problem: string;
     solution: string;
   }[];
+}
+
+export interface DocSection {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  readTime: string;
+  topics: {
+    title: string;
+    description: string;
+    badge?: string;
+  }[];
+  content: string;
 }

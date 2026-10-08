@@ -11,7 +11,6 @@ import {
   Cpu,
   BookOpen,
   FolderGit2,
-  ArrowRight,
 } from 'lucide-react';
 
 export default function FavoritesPage() {

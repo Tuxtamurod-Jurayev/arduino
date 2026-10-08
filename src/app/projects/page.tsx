@@ -5,11 +5,8 @@ import Link from 'next/link';
 import {
   FolderGit2,
   Clock,
-  Gauge,
   ArrowRight,
-  Layers,
   Sparkles,
-  Terminal,
   Bookmark,
 } from 'lucide-react';
 import { projectsData } from '@/data/projects';
