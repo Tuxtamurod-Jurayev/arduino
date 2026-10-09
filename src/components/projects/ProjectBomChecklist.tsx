@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ProjectMaterial } from '@/types';
+import { boardsData } from '@/data/boards';
 import { Layers, CheckSquare, Square, ExternalLink } from 'lucide-react';
 
 interface ProjectBomChecklistProps {
@@ -65,14 +66,20 @@ export function ProjectBomChecklist({ materials }: ProjectBomChecklistProps) {
               <div className="flex items-center space-x-2 flex-shrink-0">
                 <span className="text-[11px] font-mono text-zinc-400">{mat.quantity}</span>
                 {mat.componentSlug && (
-                  <Link
-                    href={`/components/${mat.componentSlug}`}
-                    onClick={(e) => e.stopPropagation()}
-                    className="p-1 text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors"
-                    title="Komponent sahifasini ochish"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </Link>
+                  (() => {
+                    const isBoard = boardsData.some((b) => b.slug === mat.componentSlug);
+                    const href = isBoard ? `/boards/${mat.componentSlug}` : `/components/${mat.componentSlug}`;
+                    return (
+                      <Link
+                        href={href}
+                        onClick={(e) => e.stopPropagation()}
+                        className="p-1 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+                        title={isBoard ? "Plata sahifasini ochish" : "Komponent sahifasini ochish"}
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </Link>
+                    );
+                  })()
                 )}
               </div>
             </div>

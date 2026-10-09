@@ -1,5 +1,6 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { referenceData } from '@/data/reference';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { ReferenceSidebar } from '@/components/reference/ReferenceSidebar';
@@ -9,6 +10,7 @@ import {
   ListTree,
   AlertCircle,
   CheckCircle,
+  ArrowRight,
 } from 'lucide-react';
 
 export function generateStaticParams() {
@@ -167,6 +169,31 @@ export default async function ReferenceDetailPage({ params }: PageProps) {
                     {note}
                   </div>
                 ))}
+              </div>
+            </section>
+          )}
+
+          {/* 6. Bog'liq Mavzular (Related Topics) */}
+          {item.relatedSlugs && item.relatedSlugs.length > 0 && (
+            <section className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm space-y-3">
+              <h2 className="text-base font-bold text-zinc-900 dark:text-zinc-100 flex items-center">
+                <CheckCircle className="w-4 h-4 text-teal-600 dark:text-teal-400 mr-2" />
+                Bog&apos;liq Mavzular va Funksiyalar
+              </h2>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {item.relatedSlugs.map((slug) => {
+                  const related = referenceData.find((r) => r.slug === slug);
+                  return (
+                    <Link
+                      key={slug}
+                      href={`/reference/${slug}`}
+                      className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-teal-50 dark:hover:bg-teal-950/60 border border-zinc-200 dark:border-zinc-700 hover:border-teal-300 dark:hover:border-teal-700 text-xs font-mono font-medium text-zinc-700 dark:text-zinc-300 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+                    >
+                      <span>{related ? related.name : slug}</span>
+                      <ArrowRight className="w-3 h-3 text-zinc-400" />
+                    </Link>
+                  );
+                })}
               </div>
             </section>
           )}

@@ -104,7 +104,7 @@ export default async function ComponentDetailPage({ params }: PageProps) {
       {/* 2-Column Desktop Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         {/* Left Column: Main Content (2 cols) */}
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-2 space-y-8 min-w-0">
           {/* 1. Umumiy tavsif va ishlash prinsipi */}
           <section className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm space-y-4">
             <div className="flex items-center space-x-2 text-zinc-900 dark:text-zinc-100 font-bold text-lg border-b border-zinc-100 dark:border-zinc-800 pb-3">

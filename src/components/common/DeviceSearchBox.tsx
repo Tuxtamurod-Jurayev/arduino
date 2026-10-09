@@ -218,7 +218,7 @@ export function DeviceSearchBox() {
           <div className="lg:col-span-8 bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-5 sm:p-6 space-y-5">
             {/* Header: Title, Category, Image & Detail Page Link */}
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-4">
-              <div className="flex flex-col xs:flex-row sm:flex-row items-start gap-3.5 sm:gap-4 min-w-0 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-start gap-3.5 sm:gap-4 min-w-0 w-full">
                 {currentDevice.imageUrl && (
                   <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 flex-shrink-0 shadow-sm mx-auto sm:mx-0">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -298,7 +298,7 @@ export function DeviceSearchBox() {
                 Oyoqchalari (Pinout xaritasi)
               </span>
               <div className="overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
-                <table className="w-full text-xs text-left">
+                <table className="w-full text-xs text-left min-w-[280px]">
                   <thead className="bg-zinc-100 dark:bg-zinc-800/60 text-zinc-600 dark:text-zinc-300 font-mono text-[11px]">
                     <tr>
                       <th className="py-2 px-3">Pin</th>

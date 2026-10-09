@@ -62,7 +62,7 @@ export default function ComponentsPage() {
       </div>
 
       {/* Category Tabs */}
-      <div className="flex items-center space-x-2 overflow-x-auto pb-2">
+      <div className="flex items-center space-x-2 overflow-x-auto no-scrollbar py-1">
         <Filter className="w-4 h-4 text-zinc-400 mr-1 flex-shrink-0" />
         {categories.map((cat) => (
           <button

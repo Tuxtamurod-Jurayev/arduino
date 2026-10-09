@@ -164,7 +164,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </p>
 
         {/* Wokwi iframe */}
-        <div className="relative w-full h-[500px] rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-950 shadow-inner">
+        <div className="relative w-full h-[340px] sm:h-[450px] md:h-[520px] rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-950 shadow-inner">
           <iframe
             src={project.wokwiUrl || 'https://wokwi.com/projects/321525495084941906'}
             title={`${project.title} Wokwi Simulator`}

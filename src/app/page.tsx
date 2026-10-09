@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Search, Layers, Cpu, ArrowRight, Zap, Filter } from 'lucide-react';
+import { Search, Layers, ArrowRight, Filter } from 'lucide-react';
 import { componentsData } from '@/data/components';
 
 export default function HomePage() {
@@ -69,7 +69,7 @@ export default function HomePage() {
         </div>
 
         {/* Category Pills (Touch-friendly & Horizontal Scroll) */}
-        <div className="flex items-center space-x-2 overflow-x-auto pb-1 custom-scrollbar">
+        <div className="flex items-center space-x-2 overflow-x-auto no-scrollbar py-1">
           <Filter className="w-4 h-4 text-zinc-400 mr-1 flex-shrink-0" />
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat;

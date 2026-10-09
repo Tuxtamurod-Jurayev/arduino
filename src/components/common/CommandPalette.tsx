@@ -204,7 +204,7 @@ function CommandPaletteModal({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-10 sm:pt-20 px-3 sm:px-4">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
@@ -310,19 +310,19 @@ function CommandPaletteModal({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Footer shortcuts info */}
-        <div className="flex items-center justify-between px-4 py-2.5 bg-zinc-50 dark:bg-zinc-950/80 border-t border-zinc-200 dark:border-zinc-800 text-[11px] text-zinc-500">
-          <div className="flex items-center space-x-3">
+        <div className="flex flex-wrap items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 bg-zinc-50 dark:bg-zinc-950/80 border-t border-zinc-200 dark:border-zinc-800 text-[10px] sm:text-[11px] text-zinc-500 gap-1.5">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <span>
-              <kbd className="px-1.5 py-0.5 bg-white dark:bg-zinc-800 rounded border border-zinc-300 dark:border-zinc-700 font-mono">
+              <kbd className="px-1 sm:px-1.5 py-0.5 bg-white dark:bg-zinc-800 rounded border border-zinc-300 dark:border-zinc-700 font-mono">
                 ↑
               </kbd>{' '}
-              <kbd className="px-1.5 py-0.5 bg-white dark:bg-zinc-800 rounded border border-zinc-300 dark:border-zinc-700 font-mono">
+              <kbd className="px-1 sm:px-1.5 py-0.5 bg-white dark:bg-zinc-800 rounded border border-zinc-300 dark:border-zinc-700 font-mono">
                 ↓
               </kbd>{' '}
               Tanlash
             </span>
             <span>
-              <kbd className="px-1.5 py-0.5 bg-white dark:bg-zinc-800 rounded border border-zinc-300 dark:border-zinc-700 font-mono">
+              <kbd className="px-1 sm:px-1.5 py-0.5 bg-white dark:bg-zinc-800 rounded border border-zinc-300 dark:border-zinc-700 font-mono">
                 Enter
               </kbd>{' '}
               Ochish

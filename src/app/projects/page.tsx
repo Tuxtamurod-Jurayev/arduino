@@ -44,7 +44,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex items-center space-x-2 overflow-x-auto pb-2">
+      <div className="flex items-center space-x-2 overflow-x-auto no-scrollbar py-1">
         <span className="text-xs text-zinc-400 mr-2">Qiyinlik darajasi:</span>
         {difficulties.map((diff) => (
           <button

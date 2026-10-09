@@ -102,7 +102,7 @@ export default function ReferencePage() {
           </div>
 
           {/* 3 Pillars Filter Buttons */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
             {pillars.map((p) => {
               const Icon = p.icon;
               const isSelected = selectedPillar === p.key;

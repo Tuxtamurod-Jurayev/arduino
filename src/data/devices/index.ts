@@ -3,6 +3,8 @@ import { sensorsData } from './sensors';
 import { displaysData } from './displays';
 import { motorsData } from './motors';
 import { wirelessData } from './wireless';
+import { boardsDeviceData } from './boards';
+import { passiveDeviceData } from './passive';
 
 // Barcha qurilmalarning yagona birlashgan bazasi
 export const allDevicesData: DeviceItem[] = [
@@ -10,6 +12,8 @@ export const allDevicesData: DeviceItem[] = [
   ...displaysData,
   ...motorsData,
   ...wirelessData,
+  ...boardsDeviceData,
+  ...passiveDeviceData,
 ];
 
 // Slug bo'yicha topish
@@ -29,6 +33,15 @@ export const deviceCategories = [
   'Displeylar',
   'Motorlar va Drayverlar',
   'Simsiz Aloqa Modullari',
+  'Platalar',
+  'Passiv komponentlar',
 ] as const;
 
-export { sensorsData, displaysData, motorsData, wirelessData };
+export {
+  sensorsData,
+  displaysData,
+  motorsData,
+  wirelessData,
+  boardsDeviceData,
+  passiveDeviceData,
+};
