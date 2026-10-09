@@ -1,6 +1,6 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { componentsData } from '@/data/components';
+import { boardsData } from '@/data/boards';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { CodeBlock } from '@/components/common/CodeBlock';
 import {
@@ -27,6 +27,10 @@ export default async function ComponentDetailPage({ params }: PageProps) {
   const item = componentsData.find((c) => c.slug === slug);
 
   if (!item) {
+    const board = boardsData.find((b) => b.slug === slug);
+    if (board) {
+      redirect(`/boards/${slug}`);
+    }
     notFound();
   }
 

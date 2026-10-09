@@ -4,7 +4,8 @@ export type ComponentCategory =
   | 'Motorlar'
   | 'Simsiz aloqa'
   | 'Quvvat ta\'minoti'
-  | 'Modullar';
+  | 'Modullar'
+  | 'Komponentlar';
 
 export interface PinoutItem {
   pin: string;

@@ -1,6 +1,7 @@
 import { ComponentItem } from '@/types';
+import { extraComponentsData } from './components_extra';
 
-export const componentsData: ComponentItem[] = [
+const baseComponentsData: ComponentItem[] = [
   {
     id: '1',
     slug: 'hc-sr04',
@@ -1160,3 +1161,10 @@ void loop() {
     ],
   },
 ];
+
+// Baza va yangi qo'shilgan komponentlar yagona to'plami (36 ta komponent)
+export const componentsData: ComponentItem[] = [
+  ...baseComponentsData,
+  ...extraComponentsData,
+];
+
