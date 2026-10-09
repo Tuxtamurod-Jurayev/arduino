@@ -4,19 +4,50 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Search, Layers, ArrowRight, Filter } from 'lucide-react';
 import { componentsData } from '@/data/components';
+import { boardsData } from '@/data/boards';
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('Barchasi');
 
+  // Barcha qurilmalar va mikrokontroller platalarining birlashgan bazasi
+  const allDevices = useMemo(() => {
+    const comps = componentsData.map((c) => ({
+      slug: c.slug,
+      name: c.name,
+      shortDesc: c.shortDesc,
+      category: c.category,
+      voltage: c.voltage,
+      imageUrl: c.imageUrl,
+      pinsCount: c.pinout.length,
+      href: `/components/${c.slug}`,
+      purpose: c.overview,
+    }));
+
+    const boards = boardsData.map((b) => ({
+      slug: b.slug,
+      name: b.title,
+      shortDesc: b.description,
+      category: 'Platalar',
+      voltage: b.operatingVoltage,
+      imageUrl: b.imageUrl,
+      pinsCount: b.digitalPins + b.analogPins,
+      href: `/boards/${b.slug}`,
+      purpose: b.description,
+    }));
+
+    return [...comps, ...boards];
+  }, []);
+
   // Barcha mavjud kategoriyalar
   const categories = useMemo(() => {
-    return ['Barchasi', ...Array.from(new Set(componentsData.map((c) => c.category)))];
-  }, []);
+    const cats = Array.from(new Set(allDevices.map((c) => c.category)));
+    return ['Barchasi', ...cats];
+  }, [allDevices]);
 
   // Qidiruv va toifa bo'yicha saralangan qurilmalar
   const filteredDevices = useMemo(() => {
-    return componentsData.filter((item) => {
+    return allDevices.filter((item) => {
       const matchCategory =
         selectedCategory === 'Barchasi' || item.category === selectedCategory;
       const q = searchQuery.toLowerCase().trim();
@@ -25,11 +56,12 @@ export default function HomePage() {
         item.name.toLowerCase().includes(q) ||
         item.shortDesc.toLowerCase().includes(q) ||
         item.slug.toLowerCase().includes(q) ||
-        item.category.toLowerCase().includes(q);
+        item.category.toLowerCase().includes(q) ||
+        item.purpose.toLowerCase().includes(q);
 
       return matchCategory && matchSearch;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [allDevices, searchQuery, selectedCategory]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 space-y-8">
@@ -55,7 +87,7 @@ export default function HomePage() {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Qurilma yoki datchik nomini yozing (masalan: dht11, oled, servo, hc-sr04)..."
+            placeholder="Qurilma, datchik yoki plata nomini yozing (masalan: uno, nano, due, micro, mkr, dht11, oled, servo)..."
             className="w-full pl-12 pr-4 py-3.5 text-sm sm:text-base bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 rounded-2xl focus:border-teal-500 dark:focus:border-teal-400 outline-none text-zinc-900 dark:text-zinc-100 shadow-sm transition-all"
           />
           {searchQuery && (
@@ -116,7 +148,7 @@ export default function HomePage() {
           {filteredDevices.map((item) => (
             <Link
               key={item.slug}
-              href={`/components/${item.slug}`}
+              href={item.href}
               className="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 sm:p-5 shadow-xs hover:shadow-md hover:border-teal-500/60 transition-all flex flex-col justify-between"
             >
               <div>
@@ -157,7 +189,7 @@ export default function HomePage() {
               {/* Bottom Card Footer */}
               <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs">
                 <span className="font-mono text-[11px] text-zinc-400">
-                  {item.pinout.length} ta pin
+                  {item.pinsCount} ta pin
                 </span>
                 <span className="text-teal-600 dark:text-teal-400 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center">
                   Batafsil <ArrowRight className="w-3.5 h-3.5 ml-1" />
