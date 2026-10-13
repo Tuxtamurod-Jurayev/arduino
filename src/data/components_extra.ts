@@ -12,7 +12,7 @@ export const extraComponentsData: ComponentItem[] = [
     category: 'Sensorlar',
     voltage: '3.3V - 5V DC (o\'rnatilgan LDO stabilizator mavjud)',
     current: '3.9 mA',
-    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800',
+    imageUrl: '/images/components/mpu-6050.jpg',
     specs: [
       { label: "O'qlar soni", value: "6 o'q (3 ta akselerometr + 3 ta giroskop)" },
       { label: 'Akselerometr diapazoni', value: '±2g, ±4g, ±8g, ±16g' },
@@ -110,7 +110,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '3.3V DC (5V modulda regulyator mavjud)',
     current: '3.6 µA (o\'lchash vaqtida)',
-    imageUrl: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=800',
+    imageUrl: '/images/components/bme280.jpg',
     specs: [
       { label: 'Harorat diapazoni', value: '-40°C dan +85°C gacha (aniqlik ±1.0°C)' },
       { label: 'Namlik diapazoni', value: '0% dan 100% RH gacha (aniqlik ±3%)' },
@@ -200,7 +200,7 @@ void loop() {
     category: 'Modullar',
     voltage: '3.3V - 5.5V DC',
     current: '200 µA',
-    imageUrl: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800',
+    imageUrl: '/images/components/ds3231-rtc.jpg',
     specs: [
       { label: 'Vaqt aniqligi', value: 'Yiliga 2 daqiqadan kam xatolik (TCXO kristalli)' },
       { label: 'Zaxira batareya', value: 'CR2032 (yillab quvvatsiz ishlaydi)' },
@@ -293,7 +293,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '3.0V - 5.5V DC',
     current: '1.5 mA',
-    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800',
+    imageUrl: '/images/components/ds18b20.jpg',
     specs: [
       { label: 'O\'lchash diapazoni', value: '-55°C dan +125°C gacha' },
       { label: 'Aniqlik', value: '±0.5°C (-10°C dan +85°C gacha oraliqda)' },
@@ -375,7 +375,7 @@ void loop() {
     category: 'Simsiz aloqa',
     voltage: '1.9V - 3.6V DC (Diqqat: 5V ga ulamang, faqat 3.3V)',
     current: '12 mA (uzatishda), 13.5 mA (qabulda)',
-    imageUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800',
+    imageUrl: '/images/components/nrf24l01.jpg',
     specs: [
       { label: 'Chastota diapazoni', value: '2.4 GHz ISM diapazoni (125 ta kanal)' },
       { label: 'Masofa', value: 'Ichki antenna bilan 50-100 m, PA+LNA bilan 1000 m' },
@@ -545,7 +545,7 @@ void loop() {
     category: 'Motorlar',
     voltage: '12V - 24V DC (Drayver orqali)',
     current: '1.5A - 1.7A faza boshiga',
-    imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800',
+    imageUrl: '/images/components/nema-17-stepper.jpg',
     specs: [
       { label: 'Qadam burchagi', value: '1.8° (bitta to\'liq aylanishda 200 qadam)' },
       { label: 'Fazalar soni', value: '2 ta faza (4 ta sim)' },
@@ -617,7 +617,7 @@ void loop() {
     category: 'Komponentlar',
     voltage: '2.0V - 6.0V DC',
     current: '70 mA (umumiy paket)',
-    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800',
+    imageUrl: '/images/components/sn74hc595n.jpg',
     specs: [
       { label: 'Chiqishlar soni', value: '8 ta parallel chiqish (Q0 - Q7)' },
       { label: 'Kirish liniyalari', value: 'DS (Data), SH_CP (Clock), ST_CP (Latch)' },
@@ -695,7 +695,7 @@ void loop() {
     category: 'Displeylar',
     voltage: '3.3V - 5V DC',
     current: '30 mA - 80 mA',
-    imageUrl: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800',
+    imageUrl: '/images/components/tm1637-display.jpg',
     specs: [
       { label: 'Displey formati', value: '4 xonali 7-segment (qo\'sh nuqta : bilan)' },
       { label: 'Boshqaruv liniyalari', value: '2 ta pin: CLK va DIO' },
@@ -766,7 +766,7 @@ void loop() {
     category: 'Displeylar',
     voltage: '5V DC',
     current: '150 - 320 mA',
-    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800',
+    imageUrl: '/images/components/max7219-matrix.webp',
     specs: [
       { label: 'Nuqtalar soni', value: '8x8 = 64 ta qizil LED nuqta' },
       { label: 'Interfeys', value: 'SPI (DIN, CS, CLK)' },

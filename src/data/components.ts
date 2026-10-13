@@ -10,7 +10,7 @@ const baseComponentsData: ComponentItem[] = [
     category: 'Sensorlar',
     voltage: '5V DC',
     current: '15 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/ssSDqoCydoXZpFyNHRmwLmIfaLUO0lHxwG221t8BDFw7GZUNRd6aqKWE0aYi6gfn6wcxm934i1roP-hOCfdjvQeKJxnL8ilWmiBCadXRuXLMA4CIV6BZabp5V8qiQFP4SGAjKkmIox6e8RJll20J80BojaIMlgGC0q-yFv4PDEewsK9p4qiu9EHXWcA6HqGCJM8W8uJwUotSwPyvS33cTuJD0Et5Qmyn-foFHHuoS8BLFk_mLqBaXj9UmIs9kkmw8TrRjDV-UORmU0ejUl50reXX_KBFhF-Yu0QgeS4iGMCRYEIA31pF6mEKXpMjioDHK1ESwEKqAnvSSE5sa0-N8Q.jpg',
+    imageUrl: '/images/components/hc-sr04.jpg',
     specs: [
       { label: 'Ishchi kuchlanish', value: '5V DC' },
       { label: 'Ishchi tok', value: '15 mA' },
@@ -105,7 +105,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '3.3V - 5.5V DC',
     current: '0.5 - 2.5 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/pHNTCV0DUQQxSFBbkDkd2iShONiqQFzvZCo7dpITMFqz8HiJL7L4N_JQYY-ceTH521CyayyqsSFT4d4a99HyvuYg8icnPS4ItfQMTgE3tVODXfooLxYUO7soPg_Fe5ifd2zbYKgyQz4dY6MOL-pS7TLggK0rz1S6k9KkNCuTybxNLfcqYqb8NZC9Az0mnU3-RSKIfdTfxoDys_HvF4McUvZ4OccUdV2pppylyv2l4INzdG0oR2QIRQ4qAQ8GSGgaSl-9BWo1Lav6KDrcTgTanUk6hKd01eKf4TAfFUxP27wavztwwGV_jwdyS80mCdC1BippjKgirDFLVsewFYVesQ.jpg',
+    imageUrl: '/images/components/dht11.jpg',
     specs: [
       { label: 'Namlik o\'lchash oralig\'i', value: '20% - 90% RH (aniqlik ±5%)' },
       { label: 'Harorat o\'lchash oralig\'i', value: '0°C dan +50°C gacha (aniqlik ±2°C)' },
@@ -187,7 +187,7 @@ void loop() {
     category: 'Displeylar',
     voltage: '3.3V - 5V DC',
     current: '20 mA (o\'rtacha)',
-    imageUrl: 'https://cdn4.telesco.pe/file/dVM6n5coDBypmGDHd0uo1em9yvO0YFuXp72s5JntvjINN0c6KiCcCQiEeLfmWhX8wxqQjh0H-B5ee5d9cirXWAC9r7ot0jgzGJheKowWpNE8qwXDrp3QXVwmAAx6M6Tw2VkiCsHFC5rPuvV0PeIa7kfgVC_G-9Pb0egdZUIXJcJ4EcZFd3ryLV9StuJBnllZqgx9mPrmwywB3c7djS11mJQPJVjM4YQeXCR9gtWHcajVsHDsX8hu3FhzyAznvdAQcWGaWdpWUO_0Sq53g-Fzg3nEUXYYt4uKYg_wyWnMlT_bgJqFI9YUcrAaHRjP1luYWjF5C8HSm0BFlaCFkHdnNQ.jpg',
+    imageUrl: '/images/components/oled-096-i2c.jpg',
     specs: [
       { label: 'Ruxsati (Resolution)', value: '128 x 64 piksel' },
       { label: 'Drayver chipi', value: 'SSD1306' },
@@ -266,7 +266,7 @@ void loop() {}`,
     category: 'Motorlar',
     voltage: '4.8V - 6.0V DC',
     current: '100 mA (harakatda), 500 mA (yuklamada)',
-    imageUrl: 'https://cdn4.telesco.pe/file/lP23BvJSKG63nEowhhZD6eftIUp8b2EvqsP7SC_qDiL0NGz8ESZi6G7t7DOktYodjAGe7Kqxme_WVht2XVvEVExyblaUy3elFzkWdcfSenzgHsmdWynBNQmuJYDE9FC0KgtkigjBHf0265gmaBigTSVE6wuvfmB8h8H0v1pEysv7UG0m_jLBsMIz_GM86tMsBF792NWiAJp7EKEZxuZMSQTZNNW7fH2m-p-ENNsahM1rL5B2k00vBZTVXR1pHVV8POoSXHQvzs4KjJjmMqg14IYGXpT3P1MDrDDsf2mY3Li9NE4YNQsGpsqFmHW0dmWgW-l9h5kioZ4keFlg9amsTw.jpg',
+    imageUrl: '/images/components/sg90-servo.jpg',
     specs: [
       { label: 'Burilish burchagi', value: '180 daraja (0° - 180°)' },
       { label: 'Aylantiruvchi moment (Torque)', value: '1.8 kg/sm (4.8V da)' },
@@ -339,7 +339,7 @@ void loop() {
     category: 'Modullar',
     voltage: '5V DC',
     current: '70 mA (yoniq paytda)',
-    imageUrl: 'https://cdn4.telesco.pe/file/FpEF6OmB_UYs_QVIc-Z0ppWfNmbm5Fbj-dpVM7vPQGqXy-sp9qlt3Fh2zoiRuqX5dgrbyDVKVkOZ4MxrI_-BS1WNW4zESwF6BMFQM82HR7x2xRIB8Q81kA0BVkcqVIk3Rz2C3XnALpNf97Cr7-Patn-1ckuWJy6bJeSuWmsr-XtuGtUzBd580iTmkLZ-x2XDNyLCSWxpRtZx7nphaDs2cxnbwCtGjWDprsm0B6D9QeYOpbVw22J8RaBHbn3GhnRR-M6bG5Uqe1o3vfUPp_5Lt1tQfSdNW0hwiCg9GzpKPhlDeJbtpKeiWwldVK28jwiT34Ra61MVrZ8HEVQDJpGv2Q.jpg',
+    imageUrl: '/images/components/relay-5v.jpg',
     specs: [
       { label: 'Maksimal yuklama', value: '250V AC / 10A yoki 30V DC / 10A' },
       { label: 'Boshqaruv signali', value: '5V TTL (Active LOW yoki HIGH)' },
@@ -687,7 +687,7 @@ void loop() {
     category: 'Modullar',
     voltage: '3.3V DC (Diqqat: 5V bermang!)',
     current: '13 - 26 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/S9Yl6naEDGtWM0sc4wA10dJ7Ue5lwNzn2rHKGqOOlo7I2g1NJ_JB-QXiLvsCrFiPmcQisftN-9Z-ivx-pKWaVTq0eoAdk7XEQXqGobXy81DUqounwkYKAUgbimoNvJMQnV-C6USFxic_sYN1dX8F37jrazdllVUZmeUxmKuZGUuxdwdnDPwKHkQ60Y0YT6LM6A4KjOb2Wa73OmWljmLha-N4q55tAxjf0RgWXfOf3AyA4XC1urvXaqIq3lvL3euNuN8DU3oWpPw7wHA4eWGWiXBHnhhmip1At4jsCyq8acYEdz3GhivHmlETtYMUqHbIexL8RMqJHXICYYsYIKNf7Q.jpg',
+    imageUrl: '/images/components/rc522.jpg',
     specs: [
       { label: 'Ishchi chastota', value: '13.56 MHz' },
       { label: 'Qo\'llab-quvvatlaydi', value: 'Mifare1 S50, S70, Mifare UltraLight' },
@@ -773,7 +773,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '1.8V - 3.6V DC (Modulda 3.3V/5V stabilizator mavjud)',
     current: '2.7 µA',
-    imageUrl: 'https://cdn4.telesco.pe/file/le_DTpRynOBorh5JBXtcx9Jsy5_AQGMG5t0jPU3LJb_wJ62Mq_WFDCWaUy1OOvTnKfGivwEjGkJHwko-shYvL3_HF3vOkGY1yJAJEHDCEWukBBqI-dBlckgpUxbvMSJmJUSkDcUQVWTYyGZVVrxMU721Wd6kDKD-SugmyPG0aSfTl2kAAf_ma44_rmLKr9v6rB5nh0SGetftiJ2n4xJVABzquWjmE3uwKS6pFvtbPKKmS1a7nJlQb6weTSuqh4i84YUbiOtPCqhWNhD_7d_1fdcscyQfToWSObte29AexzS16XxZKvMSS3RMgu6M2BTstXMQoO_8KameUyXp-lrRIA.jpg',
+    imageUrl: '/images/components/bmp280.jpg',
     specs: [
       { label: 'Bosim oralig\'i', value: '300 - 1100 hPa (aniqlik ±0.12 hPa)' },
       { label: 'Harorat oralig\'i', value: '-40°C dan +85°C gacha' },
@@ -922,7 +922,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '3.3V - 5V DC',
     current: '35 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/pHNTCV0DUQQxSFBbkDkd2iShONiqQFzvZCo7dpITMFqz8HiJL7L4N_JQYY-ceTH521CyayyqsSFT4d4a99HyvuYg8icnPS4ItfQMTgE3tVODXfooLxYUO7soPg_Fe5ifd2zbYKgyQz4dY6MOL-pS7TLggK0rz1S6k9KkNCuTybxNLfcqYqb8NZC9Az0mnU3-RSKIfdTfxoDys_HvF4McUvZ4OccUdV2pppylyv2l4INzdG0oR2QIRQ4qAQ8GSGgaSl-9BWo1Lav6KDrcTgTanUk6hKd01eKf4TAfFUxP27wavztwwGV_jwdyS80mCdC1BippjKgirDFLVsewFYVesQ.jpg',
+    imageUrl: '/images/components/soil-moisture.jpg',
     specs: [
       { label: 'Ishchi kuchlanish', value: '3.3V - 5V DC' },
       { label: 'Chiqish turi', value: 'Analog (A0) va Raqamli (D0 komparator)' },
@@ -988,7 +988,7 @@ void loop() {
     category: 'Modullar',
     voltage: '3.3V - 5V DC',
     current: '20 - 30 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/Z-1vl12-9h1JAknsSqf4GthDgcMYfgU3NT_C16ogsj-IVp7iVYs89XWkHgIQ3MxH_6FNQd8p0w3pu2mPMAvjOxlozLLNJUF9z8K5cyK439AYW14gPECiAzO7zBOJpixlL-tRbO6zb3Pgw4UUjukSOEItJ21m9cWWp7NiLP9cigjrqnc9Z777BmUa44cirZyP0ZUowFsxdZJt12AAAoXpETjcRASw73Zh_5Yb0yU338yhM-yjMBQevTnwfSoD4MbZG6yK0wLimcpH08wMDcIQxastc8eHdOJri9N1xG4-LyhWLEu5pB5fZE2wTPWoAy61DY8gy6hDxP0-YA9MZtmFRA.jpg',
+    imageUrl: '/images/components/piezo-buzzer.jpg',
     specs: [
       { label: 'Turi', value: 'Passiv (Passive piezo buzzer)' },
       { label: 'Chastota diapazoni', value: '100 Hz - 10 kHz' },
@@ -1043,7 +1043,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '0V - 5V DC',
     current: '< 1 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/P5Ij-IhlLk_7iFlKewjL8rea4YH3LR_k_8l49lKacHVO6fpuAMH7xCr7wUdanyveitlyAmbBZWWZjWMDBJyzv1DHGdrYZvsme0x_6oU0pAN9uSxp3vj8Gq2x3UocuLWcmhD6GR8_zgfGTE5rwuGNoOZRDwhY0UYSfS5dJceoe2Xisw4LsYZWV2urLt1PXOPKDb9iNOlFN_2BsBl6QrymDRzY5as2pRN0MB5NJ2z_i86C7yoSBi2Q72FQv6rq4AwchA37kxTXp2YXOGgPBtrlz7l6prX4cbkMrOGUx-t11am6MfYcw4SiRdaf4wFflnzeo2bM5LdyfKkFDaOrAPDUfw.jpg',
+    imageUrl: '/images/components/potentiometer-10k.jpg',
     specs: [
       { label: 'Qarshilik qiymati', value: '10 kOm (B10K chiziqli)' },
       { label: 'Aylanish burchagi', value: '300 daraja' },
