@@ -458,7 +458,7 @@ void loop() {
     category: 'Motorlar',
     voltage: 'Mantiq (VDD): 3.3V-5V, Motor (VMOT): 8V-35V DC',
     current: '2A gacha (radiator bilan)',
-    imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800',
+    imageUrl: '/images/components/a4988-stepper-driver.jpg',
     specs: [
       { label: 'Mikrosurilish bo\'linishi', value: 'To\'liq, 1/2, 1/4, 1/8 va 1/16 qadam' },
       { label: 'Tokni sozlash', value: 'Platadagi mini-potensiometr (Vref) orqali' },
@@ -849,7 +849,7 @@ void loop() {}`,
     category: 'Modullar',
     voltage: '3.3V - 5V DC',
     current: '45 mA - 67 mA',
-    imageUrl: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800',
+    imageUrl: '/images/components/neo-6m-gps.jpg',
     specs: [
       { label: 'Joylashuv aniqligi', value: '2.5 metr (ochiq osmon ostida)' },
       { label: 'Kanallar soni', value: '50 ta mustaqil sun\'iy yo\'ldosh kanali' },
@@ -931,7 +931,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '2.6V - 5.5V DC',
     current: '1.5 mA',
-    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800',
+    imageUrl: '/images/components/hx711-load-cell.jpg',
     specs: [
       { label: 'ADC aniqligi', value: '24-bit yuqori darajali konverter' },
       { label: 'Kuchaytirish koeffitsienti', value: '64 yoki 128 (dasturiy tanlanadi)' },
@@ -1010,7 +1010,7 @@ void loop() {
     category: 'Modullar',
     voltage: '3.3V - 5.0V DC',
     current: '20 mA (kutishda), 150-300 mA (ovoz yangraganda)',
-    imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800',
+    imageUrl: '/images/components/dfplayer-mini.jpg',
     specs: [
       { label: 'Qo\'llab-quvvatlovchi formatlar', value: 'MP3, WAV, WMA' },
       { label: 'Xotira', value: 'MicroSD karta 32GB gacha (FAT16/FAT32)' },
@@ -1088,7 +1088,7 @@ void loop() {}`,
     category: 'Displeylar',
     voltage: '5V DC',
     current: 'Har bir LED uchun 60 mA (oq rangda to\'liq yonganda)',
-    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800',
+    imageUrl: '/images/components/ws2812b-rgb.jpg',
     specs: [
       { label: 'Ranglar soni', value: '16.7 million rang (24-bit: 8 bit R, G, B)' },
       { label: 'Boshqaruv liniyasi', value: '1 ta yagona raqamli pin (DIN / DOUT)' },
@@ -1163,7 +1163,7 @@ void loop() {
     category: 'Motorlar',
     voltage: 'Mantiq: 3.3V-5V, Servolar quvvati: 5V-6V terminal',
     current: '10 mA (chip o\'zi), tashqi blokdan servolarga 5-10A',
-    imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800',
+    imageUrl: '/images/components/pca9685-pwm-driver.jpg',
     specs: [
       { label: 'Kanallar soni', value: '16 ta mustaqil apparat PWM kanali' },
       { label: 'Aniqlik', value: '12-bit (4096 pog\'onali burchak boshqaruvi)' },
@@ -1238,7 +1238,7 @@ void loop() {
     category: 'Motorlar',
     voltage: 'Motor (VM): 4.5V - 13.5V, Mantiq (VCC): 2.7V - 5.5V DC',
     current: '1.2A doimiy, 3.2A cho\'qqi',
-    imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800',
+    imageUrl: '/images/components/tb6612fng.jpg',
     specs: [
       { label: 'Tranzistor turi', value: 'MOSFET H-Bridge (Juda kam kuchlanish yo\'qotilishi)' },
       { label: 'Kanal soni', value: '2 ta DC dvigatel yoki 1 ta 4-simli Stepper' },
@@ -1324,7 +1324,7 @@ void loop() {
     category: 'Motorlar',
     voltage: 'Motor (VCC2): 4.5V - 36V, Mantiq (VCC1): 5V DC',
     current: '600 mA kanal boshiga, 1.2A cho\'qqi',
-    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800',
+    imageUrl: '/images/components/l293d-ic.jpg',
     specs: [
       { label: 'Korpus', value: 'DIP-16 (Breadboardga juda mos)' },
       { label: 'Kanallar soni', value: '2 ta ikki tomonlama DC motor yoki 1 ta Stepper' },
@@ -1402,7 +1402,7 @@ void loop() {
     category: 'Quvvat ta\'minoti',
     voltage: 'Kirish: 4V - 40V DC, Chiqish: 1.25V - 37V DC',
     current: '2A doimiy, 3A radiator bilan',
-    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800',
+    imageUrl: '/images/components/lm2596-step-down.jpg',
     specs: [
       { label: 'Samaradorlik (FIK)', value: '92% gacha yuqori energiya samaradorligi' },
       { label: 'Kommutatsiya chastotasi', value: '150 kHz' },
@@ -1469,7 +1469,7 @@ void loop() {
     category: 'Quvvat ta\'minoti',
     voltage: 'Kirish: 2V - 24V DC, Chiqish: 5V - 28V DC',
     current: '2A gacha maksimal cho\'qqi toki',
-    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800',
+    imageUrl: '/images/components/mt3608-step-up.jpg',
     specs: [
       { label: 'Maksimal chiqish kuchlanishi', value: '28V DC' },
       { label: 'Samaradorlik', value: '93% gacha' },
@@ -1539,7 +1539,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '3.3V DC (Diqqat: 5V ga ulamang, faqat 3.3V)',
     current: '1 µA (kutishda), 790 µA (ishlaganda)',
-    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800',
+    imageUrl: '/images/components/apds-9960.jpg',
     specs: [
       { label: 'Imo-ishora yo\'nalishlari', value: 'Yuqoriga, Pastga, Chapga, O\'ngga, Yaqin, Uzoq' },
       { label: 'Rangni aniqlash', value: 'Qizil, Yashil, Moviy (RGB) va Atrof yorug\'lik (Clear)' },

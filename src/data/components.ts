@@ -402,7 +402,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '5V DC',
     current: '150 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/Z_y0LVTMo4ZcNu5IckgP-9fAnm0q0WpH3MSXDuCb13woNKVkcTykQmKZ8ttBDB2bzZhKCdX1K4R8CVIp45WP5KnMnRLqkSDXnF_8FqkFs3o3y1HS8r2bHrzfuId_ZUKY3q8R8d4kAFGH0tmWdC1zive8X_Q-CGH0r7Vxj6E8z5yfbIJarPhlWw5APeyxjdHckUh4R7-UILbPLKNN5jXsY8eRGJ9Rg_JWlmZEVTQoUhR1G08Cf5NnCdjdxw7zIXBZQVACLdvwl9Z5KSdphNI3xzGYvy0DYW5_b1tLtvkyv-qDuv1vmPnufYws0Y1aTU5OM-zYKLU2z2BlatSG_IHdlw.jpg',
+    imageUrl: '/images/components/mq-2.jpg',
     specs: [
       { label: 'Sezuvchanlik oralig\'i', value: '300 - 10000 ppm (yonuvchi gazlar)' },
       { label: 'Isitish quvvati', value: '~800 mW (ichki spiral qiziydi)' },
@@ -470,7 +470,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '4.5V - 20V DC',
     current: '50 µA (kutish rejimida)',
-    imageUrl: 'https://cdn4.telesco.pe/file/EndTagy7O62o1vLAGs5N4_wULd0CVFZj9dDQr3Os9cM1i68GvXUmx75-sn3piFxnHamB7VV63Q87onuxN6cMu0EPXvDP7yc-le_2T3qxY9-rqLYTPxFDfjDtvF-1DUojrBc9QmJvXdzaPt0xewQdbQtMo5kfUI6cS-Bk1SpPGkxWauF7u5NH9i1s63BaptOmtgQS0AO9q9rWlI3Q1-1y0j3b6v7GeVMwOaBNF8KJCyKhhCo2C7nS97C5koosExbk4yDdqpxvS53ilMrBaSlfAcLY-d4PDdWoT35nIDkbyFF9KPt1FR9gp-MhxzUVDSHgkbzSNQRuZorbNpcsY519pw.jpg',
+    imageUrl: '/images/components/pir-hc-sr501.jpg',
     specs: [
       { label: 'Aniqlash masofasi', value: '3 m - 7 m gacha (sozlanadi)' },
       { label: 'Ko\'rish burchagi', value: '120 daraja konussimon' },
@@ -539,7 +539,7 @@ void loop() {
     category: 'Displeylar',
     voltage: '5V DC',
     current: '20 mA (orqa yoritish bilan ~50 mA)',
-    imageUrl: 'https://cdn4.telesco.pe/file/qELL0ObNVNnxKUGAlcxow5l8-MgcIOpjCdWWFkmUr4A2dNRYpcWPG23aK84GHco_d2JTwq1jvKJv2OSBGI2qvh1biFIPYtvDfQEVQNczhCX2hxpcEU6WdyQPPnjmoIr6My5tvN63g5tQaEgx_k6K84FXKrSUfl_-TCHIlQT-Gj2NquunwKXBfm53x0-pIdAtCNeELxXEX4RqBx6QBPzTLVKUoacrBvHh50oHpFJtQUuMs4Uw4UF7fRs3kJHiW0a1M0LcOI_fdpqHZuyDgp2r6Kjm46UKwVAh2HTB_V9nR-rAK8seD_7gF40ZzNsimlW_rX3Gf5qdwd2OBJsFzfjzAg.jpg',
+    imageUrl: '/images/components/lcd1602-i2c.jpg',
     specs: [
       { label: 'Format', value: '16 ta belgi x 2 ta qator' },
       { label: 'Interfeys', value: 'I2C PCF8574 adapteri (standart 0x27 yoki 0x3F)' },
@@ -604,7 +604,7 @@ void loop() {}`,
     category: 'Motorlar',
     voltage: '5V - 35V DC (Motor quvvati)',
     current: 'Har bir kanalga 2A (cho\'qqida 3A)',
-    imageUrl: 'https://cdn4.telesco.pe/file/q8ZXnUpKqhT3CVW1crEWAxFkx3l9loQFPZvnXvXxqIFdhEFmOiRLB7kLqsVXuYEcVYo8ErciDyjgEumff8mRckCM8r8qNqSmWfpOAZguWP3B4RZsD7Ix5cB_T-bOO9UJi_hTR81k1ph438akxMdgp7jL3eDO8pFgKyF19fyIogiaCSDy1yZ-o1XnqyPsO92y5yklVX3o0vIbbge2-emisSojgyeYEQNVtJ8tfXFMF_aCOhMJADYIDbNa3FFoRvCPjjaERrhPZrojJePhjJYZE8zIC3ph38n4S6Rb-YEINw7fi9mpPMie8iW62y2gMwofecxT1Xa7CiBntW5yYsQR9g.jpg',
+    imageUrl: '/images/components/l298n.jpg',
     specs: [
       { label: 'Drayver chipi', value: 'L298N Ikkitalik H-Bridge' },
       { label: 'Mantiqiy kuchlanish (Vss)', value: '5V DC' },
@@ -847,7 +847,7 @@ void loop() {
     category: 'Simsiz aloqa',
     voltage: '3.6V - 6V DC (Plata orqali), Mantiqiy 3.3V',
     current: '30 - 40 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/IGWbLRbfDTNsP5aK-R1SBBfC7uf7JnpNuWea7Sg6vvw5kha3hSAula0yBrb4sawdcpeHRQxOFVDnV_hHSGrDAhOe3UQKA4B-2J9v06MwAsCnd6KcmHr28jWHaowlmh4b61nhGhMsxW92WyXm3oR8ktBNw6li2IJgTlsqBzk8bLxyL1u7K-S5_We5iq4FmZ9ZwhLX4phQBc92BCx79S1werTMBR7sfFrPr3xXORILmT7GM9OgHiJ8d4LridS0fOpieBDIHdb4l_E1O4-Mn3de-3cQOg6b6MAuXQnsPB2pY51_lLhpiD6kNOpnnY0XZeIQvRK7E-VLVaal-jdW-Tjffg.jpg',
+    imageUrl: '/images/components/hc-05.jpg',
     specs: [
       { label: 'Bluetooth standarti', value: 'Bluetooth v2.0 + EDR' },
       { label: 'Ishchi masofa', value: '10 metrgacha ochiq havoda' },
@@ -1102,7 +1102,7 @@ void loop() {
     category: 'Sensorlar',
     voltage: '3.3V - 5V DC',
     current: '1 - 2 mA',
-    imageUrl: 'https://cdn4.telesco.pe/file/U4s6USUeZPLchgPPA3gRKaMTF5i0zfBct95FNdjo7HRotm6n0VqjhYJBhGH6nGUXQ_Rx_fHDJnoT2xZmNhA57B7wXag0wAsyyicfYd_-AK2Pm0j6wiV5XjG-U31DkdnZRGow7ppEfEaKIxlhZ4KLzmu_a45V1tSXVWW8DdRO83pw_9xwyf1pdpXqnUpwQogYwTsxu0v7nlH33BbkFxxLl3jIOqtr2IvXbAosx8mcfS-nq4yHOb7FIdvCjTgUrU7Nr-YgXquzQ1HFimHvcQyb0mCk-gzL2zgMNFHZXXXJmrQAISl_IhzCyvb89j59VTkzGt4OKtQQsZtBIfKlitYg0w.jpg',
+    imageUrl: '/images/components/ldr-photoresistor.jpg',
     specs: [
       { label: 'Qorong\'idagi qarshilik', value: '1 MOm dan yuqori' },
       { label: 'Yorug\'dagi qarshilik', value: '10 - 20 kOm' },
